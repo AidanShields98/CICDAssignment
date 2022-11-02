@@ -5,13 +5,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class PassengerTest {
     Passenger myPassenger;
 
     @BeforeEach
     void setUP() {
-        myPassenger = new Passenger("Mr","Jerry", "g890475", "123212321", 17);
+        myPassenger = new Passenger(null,null,null,null,0);
     }
 
     @Test
@@ -40,8 +41,8 @@ class PassengerTest {
 
     @Test
     void testIdPasses(){
-        Passenger.setId("G00370587");
-        assertEquals("G00370587", Passenger.getId());
+        Passenger.setId("1234567890");
+        assertEquals("1234567890", Passenger.getId());
     }
 
     @Test
@@ -50,7 +51,7 @@ class PassengerTest {
         assertEquals("0871230088", Passenger.getPhone());
     }
 
-        @Test
+    @Test
     void testAgePasses(){
         Passenger.setAge(17);
         assertEquals(17,Passenger.getAge());
@@ -58,32 +59,27 @@ class PassengerTest {
 
     @Test
     void testTitleFails(){
-        Passenger.setTitle("Yas");
-        assertEquals("Title must be either Mr, Ms or Mrs", Passenger.getTitle());
+        assertThrows(IllegalArgumentException.class, ()-> {myPassenger.setTitle("who");});
     }
 
     @Test
     void testNameFails(){
-        Passenger.setName("b");
-        assertEquals("Name must be greater than 3 characters", Passenger.getName());
+        assertThrows(IllegalArgumentException.class, ()-> {myPassenger.setName("s");});
     }
 
     @Test
     void testIdFails(){
-        Passenger.setId("12");
-        assertEquals("Id must be greater than 10 characters", Passenger.getId());
+        assertThrows(IllegalArgumentException.class, ()-> {myPassenger.setId("g0123");});
     }
 
     @Test
     void testPhoneFails(){
-        Passenger.setPhone("12345");
-        assertEquals("Phone must be greater than 7 characters", Passenger.getPhone());
+        assertThrows(IllegalArgumentException.class, ()-> {myPassenger.setPhone("187125441");});
     }
 
     @Test
     void testAgeFails(){
-        Passenger.setAge(12);
-        assertEquals("Age must be greater than 16",Passenger.getAge());
+        assertThrows(IllegalArgumentException.class, ()-> {myPassenger.setAge(12);});
     }
 
     @AfterEach
