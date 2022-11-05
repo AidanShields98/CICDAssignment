@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d8bc493-0e0b-4398-95f7-588779075f58" name="Changes" comment="Tests Built">
+    <list default="true" id="9d8bc493-0e0b-4398-95f7-588779075f58" name="Changes" comment="class built and coverage 100%">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ie/atu/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ie/atu/Passenger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ie/atu/PassengerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ie/atu/PassengerTest.java" afterDir="false" />
     </list>
@@ -19,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -36,8 +36,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
   </component>
-  <component name="RunManager" selected="JUnit.PassengerTest">
-    <configuration name="PassengerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ie.atu" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.PassengerTest.testAgeSuccess">
+    <configuration name="PassengerTest.TitleSuccessMrs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PassengerAssignment" />
       <extension name="coverage">
         <pattern>
@@ -47,28 +52,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="ie.atu" />
       <option name="MAIN_CLASS_NAME" value="ie.atu.PassengerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PassengerTest.testIdPasses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PassengerAssignment" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ie.atu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ie.atu" />
-      <option name="MAIN_CLASS_NAME" value="ie.atu.PassengerTest" />
-      <option name="METHOD_NAME" value="testIdPasses" />
+      <option name="METHOD_NAME" value="TitleSuccessMrs" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PassengerTest.testTitleFails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PassengerTest.TitleSuccessMs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PassengerAssignment" />
       <extension name="coverage">
         <pattern>
@@ -78,7 +68,55 @@
       </extension>
       <option name="PACKAGE_NAME" value="ie.atu" />
       <option name="MAIN_CLASS_NAME" value="ie.atu.PassengerTest" />
-      <option name="METHOD_NAME" value="testTitleFails" />
+      <option name="METHOD_NAME" value="TitleSuccessMs" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PassengerTest.testAgeSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PassengerAssignment" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.atu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.atu" />
+      <option name="MAIN_CLASS_NAME" value="ie.atu.PassengerTest" />
+      <option name="METHOD_NAME" value="testAgeSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PassengerTest.testIdSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PassengerAssignment" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.atu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.atu" />
+      <option name="MAIN_CLASS_NAME" value="ie.atu.PassengerTest" />
+      <option name="METHOD_NAME" value="testIdSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PassengerTest.testPhoneSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PassengerAssignment" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ie.atu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ie.atu" />
+      <option name="MAIN_CLASS_NAME" value="ie.atu.PassengerTest" />
+      <option name="METHOD_NAME" value="testPhoneSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -86,9 +124,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PassengerTest" />
-        <item itemvalue="JUnit.PassengerTest.testTitleFails" />
-        <item itemvalue="JUnit.PassengerTest.testIdPasses" />
+        <item itemvalue="JUnit.PassengerTest.testAgeSuccess" />
+        <item itemvalue="JUnit.PassengerTest.testPhoneSuccess" />
+        <item itemvalue="JUnit.PassengerTest.testIdSuccess" />
+        <item itemvalue="JUnit.PassengerTest.TitleSuccessMs" />
+        <item itemvalue="JUnit.PassengerTest.TitleSuccessMrs" />
       </list>
     </recent_temporary>
   </component>
@@ -108,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667413322551</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="class built and coverage 100%">
+      <created>1667414549163</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667414549163</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,9 +168,11 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Tests Built" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tests Built" />
+    <MESSAGE value="class built and coverage 100%" />
+    <option name="LAST_COMMIT_MESSAGE" value="class built and coverage 100%" />
   </component>
 </project>

@@ -16,71 +16,79 @@ class PassengerTest {
     }
 
     @Test
-    void testTitlePassesMr(){
-        Passenger.setTitle("Mr");
-        assertEquals("Mr", Passenger.getTitle());
+    void testTitleSuccessMr() {
+        myPassenger = new Passenger("Mr","Aidan","G0037058710","1234567890",22);
+        assertEquals("Mr",Passenger.getTitle());
     }
 
     @Test
-    void testTitlePassesMs(){
-        Passenger.setTitle("Ms");
-        assertEquals("Ms", Passenger.getTitle());
+    void testTitleSuccessMrs() {
+        myPassenger = new Passenger("Mrs","Aidan","G0037058710","1234567890",22);
+        assertEquals("Mrs",Passenger.getTitle());
     }
 
     @Test
-    void testTitlePassesMrs(){
-        Passenger.setTitle("Mrs");
-        assertEquals("Mrs", Passenger.getTitle());
+    void testTitleSuccessMs() {
+        myPassenger = new Passenger("Ms","Aidan","G0037058710","1234567890",22);
+        assertEquals("Ms",Passenger.getTitle());
     }
 
     @Test
-    void testNamePasses(){
-        Passenger.setName("Jason");
-        assertEquals("Jason", Passenger.getName());
+    void testNameSuccess() {
+        myPassenger = new Passenger("Ms","Aidan","G0037058710","1234567890",22);
+        assertEquals("Aidan",Passenger.getName());
     }
 
     @Test
-    void testIdPasses(){
-        Passenger.setId("1234567890");
-        assertEquals("1234567890", Passenger.getId());
+    void testIdSuccess() {
+        myPassenger = new Passenger("Ms","Aidan","G0037058710","1234567890",22);
+        assertEquals("G0037058710",Passenger.getId());
     }
 
     @Test
-    void testPhonePasses(){
-        Passenger.setPhone("0871230088");
-        assertEquals("0871230088", Passenger.getPhone());
+    void testPhoneSuccess() {
+        myPassenger = new Passenger("Ms","Aidan","G0037058710","1234567890",22);
+        assertEquals("1234567890",Passenger.getPhone());
     }
 
     @Test
-    void testAgePasses(){
-        Passenger.setAge(17);
-        assertEquals(17,Passenger.getAge());
+    void testAgeSuccess() {
+        myPassenger = new Passenger("Ms","Aidan","G0037058710","1234567890",22);
+        assertEquals(22,myPassenger.getAge());
     }
+
+
 
     @Test
     void testTitleFails(){
-        assertThrows(IllegalArgumentException.class, ()-> {myPassenger.setTitle("who");});
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, ()-> {myPassenger.Passenger("Yes","Aidan","G0037058710","1234567890",20);});
+        assertEquals(ex.getMessage(),"Title must be either Mr, Ms or Mrs");
     }
 
     @Test
     void testNameFails(){
-        assertThrows(IllegalArgumentException.class, ()-> {myPassenger.setName("s");});
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, ()-> {myPassenger.Passenger("Mr","A","G0037058710","1234567890",20);});
+        assertEquals(ex.getMessage(),"Name must be greater than 3 characters");
     }
 
     @Test
     void testIdFails(){
-        assertThrows(IllegalArgumentException.class, ()-> {myPassenger.setId("g0123");});
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, ()-> {myPassenger.Passenger("Mr","Aidan","G00","1234567890",20);});
+        assertEquals(ex.getMessage(),"Id must be greater than 10 characters");
     }
 
     @Test
     void testPhoneFails(){
-        assertThrows(IllegalArgumentException.class, ()-> {myPassenger.setPhone("187125441");});
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, ()-> {myPassenger.Passenger("Ms","Aidan","G0037058710","12345",20);});
+        assertEquals(ex.getMessage(),"Phone must be greater than 7 characters");
     }
 
     @Test
     void testAgeFails(){
-        assertThrows(IllegalArgumentException.class, ()-> {myPassenger.setAge(12);});
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, ()-> {myPassenger.Passenger("Mrs","Aidan","G0037058710","1234567890",14);});
+        assertEquals(ex.getMessage(),"Age must be greater than 16");
     }
+
 
     @AfterEach
     void tearDown() {
