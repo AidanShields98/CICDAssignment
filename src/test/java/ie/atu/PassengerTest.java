@@ -17,43 +17,43 @@ class PassengerTest {
 
     @Test
     void testTitleSuccessMr() {
-        myPassenger = new Passenger("Mr","Aidan","G0037058710","1234567890",22);
+        myPassenger.Passenger("Mr","Aidan","G0037058710","1234567890",22);
         assertEquals("Mr",Passenger.getTitle());
     }
 
     @Test
     void testTitleSuccessMrs() {
-        myPassenger = new Passenger("Mrs","Aidan","G0037058710","1234567890",22);
-        assertEquals("Mrs",Passenger.getTitle());
+        myPassenger.Passenger("Mrs","Aidan","G0037058710","1234567890",22);
+        assertEquals("Mrs",myPassenger.getTitle());
     }
 
     @Test
     void testTitleSuccessMs() {
-        myPassenger = new Passenger("Ms","Aidan","G0037058710","1234567890",22);
-        assertEquals("Ms",Passenger.getTitle());
+        myPassenger.Passenger("Ms","Aidan","G0037058710","1234567890",22);
+        assertEquals("Ms",myPassenger.getTitle());
     }
 
     @Test
     void testNameSuccess() {
-        myPassenger = new Passenger("Ms","Aidan","G0037058710","1234567890",22);
-        assertEquals("Aidan",Passenger.getName());
+        myPassenger.Passenger("Ms","Aidan","G0037058710","1234567890",22);
+        assertEquals("Aidan",myPassenger.getName());
     }
 
     @Test
     void testIdSuccess() {
-        myPassenger = new Passenger("Ms","Aidan","G0037058710","1234567890",22);
-        assertEquals("G0037058710",Passenger.getId());
+        myPassenger.Passenger("Ms","Aidan","G0037058710","1234567890",22);
+        assertEquals("G0037058710",myPassenger.getId());
     }
 
     @Test
     void testPhoneSuccess() {
-        myPassenger = new Passenger("Ms","Aidan","G0037058710","1234567890",22);
-        assertEquals("1234567890",Passenger.getPhone());
+        myPassenger.Passenger("Ms","Aidan","G0037058710","1234567890",22);
+        assertEquals("1234567890",myPassenger.getPhone());
     }
 
     @Test
     void testAgeSuccess() {
-        myPassenger = new Passenger("Ms","Aidan","G0037058710","1234567890",22);
+        myPassenger.Passenger("Ms","Aidan","G0037058710","1234567890",22);
         assertEquals(22,myPassenger.getAge());
     }
 

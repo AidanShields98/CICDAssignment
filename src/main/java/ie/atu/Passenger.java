@@ -47,7 +47,9 @@ public class Passenger {
             throw new IllegalArgumentException("Phone must be greater than 7 characters");
         }
 
-        if(age >= LegalLimit) {
+        // test coverage is saying this isnt covered.
+        if(age >= LegalLimit)
+        {
             Age = age;
         }
         else {
@@ -71,7 +73,7 @@ public class Passenger {
         return Phone;
     }
 
-    public static int getAge() {
+    public int getAge() {
         return Age;
     }
 }
