@@ -14,6 +14,12 @@ import java.util.List;
 @RequestMapping(path = "api/passenger")
 public class PassengerApplication {
 
+	PassengerService myService;
+
+	public PassengerApplication(PassengerService myService) {
+		this.myService = myService;
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(PassengerApplication.class, args);
 	}
@@ -21,18 +27,14 @@ public class PassengerApplication {
 
 	@GetMapping
 	public List<Passenger> getPassengers(){
-		List<Passenger> myPassengers = List.of(
-				new Passenger("Mr", "aidan", "1263", 619L, 24),
-				new Passenger("Mr", "AIDAN", "1543d3",  629L, 21),
-				new Passenger("Mr", "Aidan", "16433", 618L, 22));
-		return myPassengers;
+		return myService.getPassengers();
 
 	}
 
 
 	@GetMapping("/{passengerID}")
 	public Passenger getPassenger(@PathVariable String passengerID){
-		Passenger myPassenger = new Passenger("Mr", "Daniel", "123", 619L, 24);
+		Passenger myPassenger = new Passenger("Mr", "Aidan", "123", 659L, 24);
 		return myPassenger;
 
 	}

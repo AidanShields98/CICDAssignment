@@ -1,14 +1,14 @@
 package ie.atu.Passenger;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.web.bind.annotation.RestController;
 
 @NoArgsConstructor
 @Getter
 @Setter
-@RestController
+@AllArgsConstructor
 public class Passenger {
     private String title;
     private String name;
@@ -16,14 +16,6 @@ public class Passenger {
     private long phone;
     private int age;
 
-
-    public Passenger(String title, String name, String id, long phone, int age) {
-        setTitle(title);
-        setName(name);
-        setId(id);
-        setPhone(phone);
-        setAge(age);
-    }
 
     public String getTitle() {
         return title;

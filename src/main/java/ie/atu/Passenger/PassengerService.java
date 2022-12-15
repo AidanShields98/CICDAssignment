@@ -21,7 +21,7 @@ public class PassengerService {
 
         @GetMapping("/{passengerID}")
         public Passenger getPassenger(String passengerID){
-            Passenger myPassenger = new Passenger("Mr", "Daniel", "123", 619L, 24);
+            Passenger myPassenger = new Passenger("Mr", "Aidan", "123123", 619L, 24);
             return myPassenger;
 
         }
