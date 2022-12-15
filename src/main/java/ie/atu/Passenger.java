@@ -1,81 +1,86 @@
 package ie.atu;
 
 public class Passenger {
-    static String Name, Title, Id, Phone;
-    static int Age;
-    static int LegalLimit = 16;
+    private String title;
+    private String name;
+    private long id;
+    private long phone;
+    private int age;
 
 
-    public Passenger(String title, String name, String id, String phone, int age){
-        this.Title = title;
-        this.Name  = name;
-        this.Id = id;
-        this.Phone = phone;
-        this.Age = age;
+    public Passenger(String title, String name, long id, long phone, int age) {
+        setTitle(title);
+        setName(name);
+        setId(id);
+        setPhone(phone);
+        setAge(age);
     }
 
-    public void Passenger(String title, String name, String id, String phone, int age) {
+    public String getTitle() {
+        return title;
+    }
 
-        if(title.equals("Mr") || title.equals("Ms") || title.equals("Mrs"))
-        {
-            Title = title;
+    public void setTitle(String title) {
+        if("Mr".equalsIgnoreCase(title) || "Mrs".equalsIgnoreCase(title) || "Ms".equalsIgnoreCase(title)){
+            this.title = title;
         }
         else {
-            throw new IllegalArgumentException("Title must be either Mr, Ms or Mrs");
-        }
-
-        if(name.length() >= 3) {
-            Name = name;
-        }
-        else {
-            throw new IllegalArgumentException("Name must be greater than 3 characters");
-        }
-
-        if(id.length() >= 10)
-        {
-            Id = id;
-        }
-        else {
-            throw new IllegalArgumentException("Id must be greater than 10 characters");
-        }
-
-        if(phone.length() >= 10)
-        {
-            Phone = phone;
-        }
-        else {
-            throw new IllegalArgumentException("Phone must be greater than 7 characters");
-        }
-
-        // test coverage is saying this isnt covered.
-        if(age >= LegalLimit)
-        {
-            Age = age;
-        }
-        else {
-            throw new IllegalArgumentException("Age must be greater than 16");
+            throw new IllegalArgumentException("This is not a valid name. Use Mr, Ms or Mrs.");
         }
     }
 
-    public static String getName() {
-        return Name;
+    public String getName() {
+        return name;
     }
 
-    public static String getTitle() {
-        return Title;
+    public void setName(String name) {
+        if(name.length() >= 3){
+            this.name = name;
+        }
+        else{
+            throw new IllegalArgumentException("This is not a valid name.");
+        }
     }
 
-    public static String getId() {
-        return Id;
+    public long getId() {
+        return id;
     }
 
-    public static String getPhone() {
-        return Phone;
+    public void setId(long id) {
+        if(String.valueOf(id).length() >= 10){
+            this.id = id;
+        }
+        else{
+            throw new IllegalArgumentException("This is not a valid ID.");
+        }
+    }
+
+    public long getPhone() {
+        return phone;
+    }
+
+    public void setPhone(long phone) {
+        if(String.valueOf(phone).length() >= 7){
+            this.phone = phone;
+        }
+        else{
+            throw new IllegalArgumentException("This is not a valid phone number.");
+        }
     }
 
     public int getAge() {
-        return Age;
+        return age;
     }
+
+    public void setAge(int age) {
+        if(age > 16){
+            this.age = age;
+        }
+        else{
+            throw new IllegalArgumentException("You must be over 16.");
+        }
+    }
+
 }
 
 

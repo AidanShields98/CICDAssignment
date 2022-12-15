@@ -4,94 +4,75 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 class PassengerTest {
-    Passenger myPassenger;
+
+    private Passenger myPassenger;
 
     @BeforeEach
-    void setUP() {
-        myPassenger = new Passenger(null,null,null,null,0);
+    void setUp() {
+        myPassenger = new Passenger("Mr", "John Doe", 1234334567891L, 1233456789, 42);
     }
 
     @Test
-    void testTitleSuccessMr() {
-        myPassenger.Passenger("Mr","Aidan","G0037058710","1234567890",22);
-        assertEquals("Mr",Passenger.getTitle());
+    void testTitlePass(){
+        assertEquals("Mr", myPassenger.getTitle());
+        myPassenger.setTitle("Ms");
+        assertEquals("Ms", myPassenger.getTitle());
+        myPassenger.setTitle("Mrs");
+        assertEquals("Mrs", myPassenger.getTitle());
+
     }
 
     @Test
-    void testTitleSuccessMrs() {
-        myPassenger.Passenger("Mrs","Aidan","G0037058710","1234567890",22);
-        assertEquals("Mrs",myPassenger.getTitle());
+    void testNamePass(){
+        assertEquals("John Doe", myPassenger.getName());
     }
 
     @Test
-    void testTitleSuccessMs() {
-        myPassenger.Passenger("Ms","Aidan","G0037058710","1234567890",22);
-        assertEquals("Ms",myPassenger.getTitle());
+    void testIdPass(){
+        assertEquals(1234334567891L, myPassenger.getId());
     }
 
     @Test
-    void testNameSuccess() {
-        myPassenger.Passenger("Ms","Aidan","G0037058710","1234567890",22);
-        assertEquals("Aidan",myPassenger.getName());
+    void testPhonePass(){
+        assertEquals(1233456789, myPassenger.getPhone());
     }
 
     @Test
-    void testIdSuccess() {
-        myPassenger.Passenger("Ms","Aidan","G0037058710","1234567890",22);
-        assertEquals("G0037058710",myPassenger.getId());
+    void testAgePass(){
+        assertEquals(42, myPassenger.getAge());
     }
 
     @Test
-    void testPhoneSuccess() {
-        myPassenger.Passenger("Ms","Aidan","G0037058710","1234567890",22);
-        assertEquals("1234567890",myPassenger.getPhone());
+    void testTitleFail(){
+        Exception exMessage = assertThrows(IllegalArgumentException.class, () -> {new Passenger("Mister", "John Doe", 1235473822, 1222222223, 19);});
+        assertEquals("This is not a valid name. Use Mr, Ms or Mrs.", exMessage.getMessage());
     }
 
     @Test
-    void testAgeSuccess() {
-        myPassenger.Passenger("Ms","Aidan","G0037058710","1234567890",22);
-        assertEquals(22,myPassenger.getAge());
-    }
-
-
-
-    @Test
-    void testTitleFails(){
-        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, ()-> {myPassenger.Passenger("Yes","Aidan","G0037058710","1234567890",20);});
-        assertEquals(ex.getMessage(),"Title must be either Mr, Ms or Mrs");
+    void testNameFail(){
+        Exception exMessage = assertThrows(IllegalArgumentException.class, () -> {new Passenger("Mr", "ls", 1235422173822L, 1222222223, 19);});
+        assertEquals("This is not a valid name.", exMessage.getMessage());
     }
 
     @Test
-    void testNameFails(){
-        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, ()-> {myPassenger.Passenger("Mr","A","G0037058710","1234567890",20);});
-        assertEquals(ex.getMessage(),"Name must be greater than 3 characters");
+    void testIdFail(){
+        Exception exMessage = assertThrows(IllegalArgumentException.class, () -> {new Passenger("Mr", "John Doe", 123542, 1222222223, 19);});
+        assertEquals("This is not a valid ID.", exMessage.getMessage());
     }
 
     @Test
-    void testIdFails(){
-        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, ()-> {myPassenger.Passenger("Mr","Aidan","G00","1234567890",20);});
-        assertEquals(ex.getMessage(),"Id must be greater than 10 characters");
+    void testPhoneFail(){
+        Exception exMessage = assertThrows(IllegalArgumentException.class, () -> {new Passenger("Mr", "John Doe", 1235423221213L, 122222, 19);});
+        assertEquals("This is not a valid phone number.", exMessage.getMessage());
     }
 
     @Test
-    void testPhoneFails(){
-        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, ()-> {myPassenger.Passenger("Ms","Aidan","G0037058710","12345",20);});
-        assertEquals(ex.getMessage(),"Phone must be greater than 7 characters");
+    void testAgeFail(){
+        Exception exMessage = assertThrows(IllegalArgumentException.class, () -> {new Passenger("Mr", "John Doe", 1235423243243L, 1222222223, 13);});
+        assertEquals("You must be over 16.", exMessage.getMessage());
     }
 
-    @Test
-    void testAgeFails(){
-        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, ()-> {myPassenger.Passenger("Mrs","Aidan","G0037058710","1234567890",14);});
-        assertEquals(ex.getMessage(),"Age must be greater than 16");
-    }
-
-
-    @AfterEach
-    void tearDown() {
-
-    }
 }
